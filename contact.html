@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact Us – Galore Logistics</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <polygon points="18,2 34,10 34,26 18,34 2,26 2,10" fill="#F5A623"/>
+          <polygon points="18,8 28,13 28,23 18,28 8,23 8,13" fill="#1B3A5C"/>
+          <polygon points="18,12 24,15.5 24,22.5 18,26 12,22.5 12,15.5" fill="#F5A623"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-main">GALORE</span>
+        <span class="logo-sub">LOGISTICS</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="about.html">COMPANY</a></li>
+      <li class="has-dropdown">
+        <a href="services.html">SERVICES <span class="arrow">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="services.html">Customs Brokerage</a></li>
+          <li><a href="services.html">Export Documentation</a></li>
+          <li><a href="services.html">Freight Forwarding</a></li>
+          <li><a href="services.html">Imports and Exports</a></li>
+          <li><a href="services.html">Haulage</a></li>
+          <li><a href="services.html">Transport (Trailer Trucks)</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html" class="active">CONTACT</a></li>
+    </ul>
+    <a href="contact.html" class="btn-quote">REQUEST A QUOTE</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">&#9776;</button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero" style="background-image: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)), url('https://images.unsplash.com/photo-1553413077-190dd305871c?w=1600&q=80');">
+  <div class="hero-content">
+    <h1>Contact us</h1>
+    <p>We provide fast, safe, and secure transportation services for your business needs. From ocean freight to air cargo, we handle it all with precision.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a> <span>›</span> <span class="crumb-current">Services</span></div>
+  </div>
+</section>
+
+<!-- CONTACT BODY -->
+<section class="section-white">
+  <div class="container contact-layout">
+
+    <!-- LEFT: Office Info -->
+    <div class="contact-info-card">
+      <h3>Our Office Address</h3>
+      <ul class="contact-info-list">
+        <li>
+          <span class="ci-dot">📍</span>
+          <span>G7, Community 3,<br/>Near Int. Maritime Hospital, Tema</span>
+        </li>
+        <li>
+          <span class="ci-dot">🌐</span>
+          <span>Geographical Location: GQ-178-8009</span>
+        </li>
+        <li>
+          <span class="ci-dot">📬</span>
+          <span>P.O. Box CS 8932 Tema, Ghana</span>
+        </li>
+        <li>
+          <span class="ci-dot">📞</span>
+          <a href="tel:+233577707077">+233 (0)57 770 7077</a>
+        </li>
+        <li>
+          <span class="ci-dot">✉️</span>
+          <a href="mailto:info@galorelogistics.com">info@galorelogistics.com</a>
+        </li>
+      </ul>
+
+      <h3 style="margin-top:2rem;">Our Office Hours</h3>
+      <p class="hours-text">Mondays to Fridays<br/>8:00 – 17:00</p>
+    </div>
+
+    <!-- RIGHT: Contact Form -->
+    <div class="contact-form-area">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your full name"/>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="your@email.com"/>
+      </div>
+      <div class="form-group">
+        <label for="telephone">Telephone</label>
+        <input type="tel" id="telephone" placeholder="+233 ..."/>
+      </div>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" placeholder="e.g. Imports and Exports"/>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" rows="6" placeholder="Your message..."></textarea>
+      </div>
+      <button class="btn-send" onclick="handleFormSubmit()">Send Message</button>
+      <p class="form-success" id="form-success" style="display:none;">✅ Thank you! Your message has been sent. We'll be in touch shortly.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA BAND (optional) -->
+<section class="cta-band">
+  <div class="cta-text">
+    <h2>How may we be of service to you?</h2>
+    <p>Connect with us.</p>
+  </div>
+  <a href="contact.html" class="btn-cta">Contact us now</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+            <polygon points="18,2 34,10 34,26 18,34 2,26 2,10" fill="#F5A623"/>
+            <polygon points="18,8 28,13 28,23 18,28 8,23 8,13" fill="#1B3A5C"/>
+            <polygon points="18,12 24,15.5 24,22.5 18,26 12,22.5 12,15.5" fill="#F5A623"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-main">GALORE</span>
+          <span class="logo-sub">LOGISTICS</span>
+        </div>
+      </div>
+      <p class="tagline">"Together We Grow"</p>
+      <p class="footer-desc">Experienced with well trained staff in the supply chain management approach to international trade, bringing you the very best of services tailored to meet the specific needs of our clientele.</p>
+      <p class="license">Customs House Agent License: CHA/839/BOND</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Twitter">t</a>
+        <a href="#" aria-label="Instagram">in</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>NAVIGATE</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>OUR SERVICES</h4>
+      <ul>
+        <li><a href="services.html">Import and Export</a></li>
+        <li><a href="services.html">Freight Forwarding</a></li>
+        <li><a href="services.html">Haulage</a></li>
+        <li><a href="services.html">Customs Brokerage</a></li>
+        <li><a href="services.html">Export Documentations</a></li>
+        <li><a href="services.html">Transports (Trailer trucks)</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>REACH US</h4>
+      <address>
+        <p>Office Address<br/>G7, Community 3<br/>Near Int. Maritime Hospital, Tema</p>
+        <p>GQ-178-8009<br/>P.O. Box CS 8932 Tema, Ghana</p>
+        <p><strong>Tel:</strong> <a href="tel:+233577707077">+233 (0)57 770 7077</a></p>
+        <p><strong>Email:</strong> <a href="mailto:info@galorelogistics.com">info@galorelogistics.com</a></p>
+      </address>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Galore Logistics. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
