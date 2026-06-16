@@ -4,7 +4,6 @@
 // SCROLL ANIMATION SETUP
 // ============================
 
-// Intersection Observer for fade-in animations on scroll
 const observerOptions = {
   threshold: 0.1,
   rootMargin: '0px 0px -50px 0px'
@@ -13,24 +12,19 @@ const observerOptions = {
 const scrollObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      // Trigger animation by removing the class that prevents it
       if (entry.target.classList.contains('fade-in-on-scroll')) {
         entry.target.style.animationPlayState = 'running';
       }
-      // Optional: stop observing after animation
-      // scrollObserver.unobserve(entry.target);
     }
   });
 }, observerOptions);
 
-// Observe all fade-in elements
 document.querySelectorAll('.fade-in-on-scroll').forEach((el) => {
   el.style.animationPlayState = 'paused';
   scrollObserver.observe(el);
 });
 
-// Observe stagger items
-document.querySelectorAll('.stagger-item').forEach((el, index) => {
+document.querySelectorAll('.stagger-item').forEach((el) => {
   scrollObserver.observe(el);
 });
 
@@ -40,14 +34,12 @@ document.querySelectorAll('.stagger-item').forEach((el, index) => {
 
 function animateCounter(element) {
   const target = parseInt(element.getAttribute('data-target'));
-  const duration = 2000; // 2 seconds
+  const duration = 2000;
   const startTime = Date.now();
   
   function updateCounter() {
     const elapsed = Date.now() - startTime;
     const progress = Math.min(elapsed / duration, 1);
-    
-    // Easing function for smooth animation
     const easeOutQuad = 1 - (1 - progress) * (1 - progress);
     const current = Math.floor(target * easeOutQuad);
     
@@ -63,7 +55,6 @@ function animateCounter(element) {
   requestAnimationFrame(updateCounter);
 }
 
-// Counter animation with Intersection Observer
 const counterObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting && !entry.target.hasAttribute('data-animated')) {
@@ -74,30 +65,63 @@ const counterObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.5 });
 
-// Observe all counters
 document.querySelectorAll('.counter').forEach((counter) => {
   counterObserver.observe(counter);
 });
 
 // ============================
+// HORIZONTAL SCROLL WITH PARALLAX
+// ============================
+
+function setupHorizontalScroll() {
+  const scrollContainer = document.getElementById('premium-scroll');
+  if (!scrollContainer) return;
+
+  const wrapper = scrollContainer.parentElement;
+  const scrollHint = wrapper.querySelector('.scroll-hint');
+
+  // Auto-scroll on load
+  setTimeout(() => {
+    if (scrollHint) scrollHint.style.opacity = '0.5';
+  }, 1000);
+
+  // Hide hint on first scroll
+  scrollContainer.addEventListener('scroll', () => {
+    if (scrollHint && scrollContainer.scrollLeft > 50) {
+      scrollHint.style.opacity = '0';
+      scrollHint.style.pointerEvents = 'none';
+    }
+  }, { once: true });
+
+  // Smooth scroll with arrow keys
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') {
+      scrollContainer.scrollBy({ left: 300, behavior: 'smooth' });
+    }
+    if (e.key === 'ArrowLeft') {
+      scrollContainer.scrollBy({ left: -300, behavior: 'smooth' });
+    }
+  });
+}
+
+setupHorizontalScroll();
+
+// ============================
 // NAVBAR INTERACTIONS
 // ============================
 
-// Mobile hamburger menu
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.querySelector('.nav-links');
 
 if (hamburger && navLinks) {
   hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('open');
-    // Animate hamburger
     hamburger.style.transform = navLinks.classList.contains('open') 
       ? 'rotate(90deg)' 
       : 'rotate(0)';
   });
 }
 
-// Mobile: tap on "SERVICES" to toggle dropdown
 const hasDropdowns = document.querySelectorAll('.has-dropdown');
 hasDropdowns.forEach(item => {
   const link = item.querySelector('a');
@@ -109,7 +133,6 @@ hasDropdowns.forEach(item => {
   });
 });
 
-// Close mobile menu on outside click
 document.addEventListener('click', (e) => {
   if (navLinks && !navLinks.contains(e.target) && !hamburger.contains(e.target)) {
     navLinks.classList.remove('open');
@@ -130,7 +153,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         behavior: 'smooth',
         block: 'start'
       });
-      // Close mobile menu if open
       if (navLinks) navLinks.classList.remove('open');
     }
   });
@@ -146,7 +168,6 @@ const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
   let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
   
-  // Add shadow on scroll
   if (scrollTop > 50) {
     navbar.style.boxShadow = '0 8px 24px rgba(0,0,0,0.15)';
   } else {
@@ -169,7 +190,6 @@ if (parallaxElements.length > 0) {
       const elementOffset = el.offsetTop;
       const elementHeight = el.offsetHeight;
       
-      // Only apply parallax if element is visible
       if (scrollPosition + window.innerHeight > elementOffset) {
         const yPos = (scrollPosition - elementOffset) * 0.5;
         el.style.transform = `translateY(${yPos}px)`;
@@ -177,33 +197,6 @@ if (parallaxElements.length > 0) {
     });
   });
 }
-
-// ============================
-// BUTTON RIPPLE EFFECT
-// ============================
-
-const buttons = document.querySelectorAll('.btn-primary, .btn-outline, .btn-cta, .btn-quote');
-
-buttons.forEach(button => {
-  button.addEventListener('click', function(e) {
-    const ripple = document.createElement('span');
-    const rect = this.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height);
-    const x = e.clientX - rect.left - size / 2;
-    const y = e.clientY - rect.top - size / 2;
-    
-    ripple.style.width = ripple.style.height = size + 'px';
-    ripple.style.left = x + 'px';
-    ripple.style.top = y + 'px';
-    ripple.classList.add('ripple');
-    
-    // Remove previous ripple if it exists
-    const oldRipple = this.querySelector('.ripple');
-    if (oldRipple) oldRipple.remove();
-    
-    this.appendChild(ripple);
-  });
-});
 
 // ============================
 // FORM HANDLING
@@ -221,20 +214,17 @@ function handleFormSubmit() {
     return;
   }
 
-  // Show success
   const successEl = document.getElementById('form-success');
   if (successEl) {
     successEl.style.display = 'block';
     successEl.style.animation = 'fadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
     
-    // Reset form
     name.value = '';
     email.value = '';
     if (document.getElementById('telephone')) document.getElementById('telephone').value = '';
     if (document.getElementById('subject'))   document.getElementById('subject').value = '';
     message.value = '';
     
-    // Hide success message after 5 seconds
     setTimeout(() => {
       successEl.style.animation = 'fadeOut 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
       setTimeout(() => {
@@ -262,7 +252,7 @@ inputs.forEach(input => {
 });
 
 // ============================
-// SCROLL TO TOP BUTTON (optional)
+// SCROLL TO TOP BUTTON
 // ============================
 
 function createScrollToTopButton() {
@@ -291,7 +281,6 @@ function createScrollToTopButton() {
   
   document.body.appendChild(button);
   
-  // Show button on scroll
   window.addEventListener('scroll', () => {
     if (window.pageYOffset > 300) {
       button.style.opacity = '1';
@@ -302,33 +291,18 @@ function createScrollToTopButton() {
     }
   });
   
-  // Scroll to top on click
   button.addEventListener('click', () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
   });
-  
-  button.addEventListener('hover', function() {
-    this.style.background = 'var(--orange-dark)';
-    this.style.transform = 'translateY(-3px)';
-  });
 }
 
 createScrollToTopButton();
 
 // ============================
-// LOADING ANIMATION
-// ============================
-
-// Fade in page on load
-window.addEventListener('load', () => {
-  document.body.style.opacity = '1';
-});
-
-// ============================
-// PERFORMANCE: DEBOUNCE
+// DEBOUNCE FOR PERFORMANCE
 // ============================
 
 function debounce(func, wait) {
@@ -343,7 +317,6 @@ function debounce(func, wait) {
   };
 }
 
-// Debounced resize handler
 const handleResize = debounce(() => {
   // Handle resize events
 }, 250);
@@ -351,24 +324,17 @@ const handleResize = debounce(() => {
 window.addEventListener('resize', handleResize);
 
 // ============================
-// ACCESSIBILITY: KEYBOARD NAVIGATION
+// KEYBOARD NAVIGATION
 // ============================
 
-// Trap focus in dropdowns
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
-    // Close any open dropdowns
     hasDropdowns.forEach(item => {
       item.classList.remove('open');
     });
-    // Close mobile menu
     if (navLinks) navLinks.classList.remove('open');
   }
 });
-
-// ============================
-// MUTUAL EXCLUSIVITY FOR DROPDOWNS
-// ============================
 
 hasDropdowns.forEach(item => {
   item.addEventListener('mouseenter', () => {
@@ -385,4 +351,4 @@ hasDropdowns.forEach(item => {
 // PAGE READY
 // ============================
 
-console.log('Galore Logistics - Enhanced page loaded successfully with smooth animations! 🚀');
+console.log('✅ Galore Logistics - Enhanced page loaded with smooth animations!');
