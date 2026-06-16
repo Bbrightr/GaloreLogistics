@@ -78,7 +78,7 @@ function setupHorizontalScroll() {
   if (!scrollContainer) return;
 
   const wrapper = scrollContainer.parentElement;
-  const scrollHint = wrapper.querySelector('.scroll-hint');
+  // const scrollHint = wrapper.querySelector('.scroll-hint');
 
   // Auto-scroll on load
   setTimeout(() => {
