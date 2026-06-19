@@ -944,6 +944,61 @@ address { font-style: normal; }
 } */
 
 /* ============================
+Contact Page
+=============================== */ 
+
+.contact-info-card {
+  background: #142d47;
+  padding: 44px;
+  border-radius: 24px;
+  color: white;
+  width: 500px;
+}
+
+.contact-info-card ul li{
+  padding-bottom: 12px;
+  list-style-type: none;
+}
+
+.contact-info-card ul li a {
+  color: #d98e10;
+}
+
+.contact-info-card h3 {
+  padding-bottom: 20px;
+  text-decoration: underline;
+}
+
+.ci-dot {
+  margin: 0;
+  /* padding: 0; */
+  /* width: 16px;
+  height: 16px; */
+}
+
+
+.contact-layout {
+  display: flex;
+  justify-content: space-around;
+}
+
+.contact-form-area {
+  /* max-width: 100%; */
+}
+
+label {
+  display: block;
+  padding-top: 12px;
+}
+
+input, textarea {
+  width: 600px;
+  padding: 12px;
+  border: 1px solid #919191;
+  background: #F7F7F7;
+}
+
+/* ============================
    
 ER
 ============================ */
