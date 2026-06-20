@@ -207,9 +207,9 @@ if (footerAll) {
                             <p class="footer-desc">Experienced with well trained staff in the supply chain management approach to international trade, bringing you the very best of services tailored to meet the specific needs of our clientele.</p>
                             <p class="license">Customs House Agent License: CHA/839/BOND</p>
                             <div class="social-icons">
-                                <a href="https://www.facebook.com/galorelogistics" aria-label="Facebook" class="social-link">f</a>
-                                <a href="https://x.com/GALORELOGISTICS" aria-label="Twitter" class="social-link">t</a>
-                                <a href="https://instagram.com/galorelogistics" aria-label="Instagram" class="social-link">in</a>
+                                <a href="https://www.facebook.com/galorelogistics" aria-label="Facebook" class="social-link" target="_blank">f</a>
+                                <a href="https://x.com/GALORELOGISTICS" aria-label="Twitter" class="social-link" target="_blank">t</a>
+                                <a href="https://instagram.com/galorelogistics" aria-label="Instagram" class="social-link" target="_blank">in</a>
                             </div>
                             </div>
                             <div class="footer-col">
