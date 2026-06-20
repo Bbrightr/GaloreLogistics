@@ -998,6 +998,65 @@ input, textarea {
   background: #F7F7F7;
 }
 
+.process-step {
+  flex: 0 0 200px;
+  background: white;
+  padding: 2rem 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  position: relative;
+  transition: var(--transition);
+}
+
+.process-step:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+.process-step h4 { font-size: 1.05rem; color: var(--navy); font-weight: 700; margin-bottom: 0.8rem; }
+.process-step p { color: var(--text-light); font-size: 0.85rem; line-height: 1.6; }
+.process-flow {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  overflow-x: auto;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.related-services-grid { display: grid; grid-template-columns: repeat(1fr); gap: 0.5rem; }
+.related-service-card {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.related-service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(245, 166, 35, 0.05) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.related-service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+.related-service-card:hover::before { opacity: 1; }
+
+.related-service-card h3 { font-size: 1.15rem; color: var(--navy); margin-bottom: 0.8rem; font-weight: 700; position: relative; z-index: 1; transition: color 0.3s ease; }
+.related-service-card p { color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem; line-height: 1.6; position: relative; z-index: 1; flex: 1; }
+
+.related-service-card:hover .arrow-link { transform: translateX(4px); }
+.related-service-card:hover h3 { color: var(--orange); }
+
 /* ============================
    
 ER
