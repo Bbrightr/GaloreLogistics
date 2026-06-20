@@ -1,19 +1,20 @@
 let connectingBand = document.getElementById('connect-band')
 let serviceGrid = document.getElementById('service-grid')
 let footerAll = document.getElementById('footer-root')
+let supportSystem = document.getElementById('support-system')
 
+if (connectingBand) {
+  connectingBand.innerHTML = `<div class="hero-container">
+                                <div class="cta-text">
+                                    <h2>How may we be of service to you?</h2>
+                                    <p>Connect with us.</p>
+                                </div>
+                                    <a href="contact.html" class="btn-cta btn-animated">Contact us now</a>
+                            </div>`
+}
 
-
-connectingBand.innerHTML = `<div class="hero-container">
-                                                        <div class="cta-text">
-                                                        <h2>How may we be of service to you?</h2>
-                                                        <p>Connect with us.</p>
-                                                    </div>
-                                                    <a href="contact.html" class="btn-cta btn-animated">Contact us now</a>
-                                                    </div>`
-
-
-serviceGrid.innerHTML = `<div class="container">
+if (serviceGrid) {
+  serviceGrid.innerHTML = `<div class="container">
                                                     <div class="cards-grid three-col services-cards">
 
                                                     <div class="srv-card stagger-item" id="imports-exports">
@@ -72,11 +73,11 @@ serviceGrid.innerHTML = `<div class="container">
                                                     </div>
 
                                                     </div>
-                                                </div>`                                                  
+                                                </div>`
+}
 
-
-
-document.getElementById("support-system").innerHTML = `<div class="container">
+if (supportSystem) {
+  supportSystem.innerHTML = `<div class="container">
                                                         <div>
                                                         <h2 class="section-title fade-in-on-scroll">Services that support your logistics</h2>
                                                         <p class="section-sub">There are three most essential services that we consider in order to bring you the best and seamless services.</p>
@@ -106,10 +107,10 @@ document.getElementById("support-system").innerHTML = `<div class="container">
                                                         </div>
                                                         </div>
                                                     </div>`
+}
 
-
-
-footerAll.innerHTML = `<div class="footer-container">
+if (footerAll) {
+  footerAll.innerHTML = `<div class="footer-container">
                             <div class="footer-brand">
                             <div class="logo">
                                 <div class="logo-icon">
@@ -158,3 +159,5 @@ footerAll.innerHTML = `<div class="footer-container">
                         <div class="footer-bottom">
                             <p>© 2026 Galore Logistics. All rights reserved.</p>
                         </div>`
+}
+
