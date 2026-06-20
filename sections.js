@@ -2,6 +2,7 @@ let connectingBand = document.getElementById('connect-band')
 let serviceGrid = document.getElementById('service-grid')
 let footerAll = document.getElementById('footer-root')
 let supportSystem = document.getElementById('support-system')
+let serviceRightSide = document.getElementById('right-side')
 
 if (connectingBand) {
   connectingBand.innerHTML = `<div class="hero-container">
@@ -18,12 +19,13 @@ if (serviceGrid) {
                                                     <div class="cards-grid three-col services-cards">
 
                                                     <div class="srv-card stagger-item" id="imports-exports">
+                                                        <a href="importexport.html">
                                                         <div class="srv-img"><img src="img/trailertruck.jpeg"></div>
                                                         <div class="srv-body">
                                                         <h3>Imports and Exports</h3>
                                                         <p>We handle all aspects of international trade. From procuring agro commodities to managing complex multi-modal shipments, our team ensures seamless import and export operations across the globe.</p>
-                                                        <a href="contact.html" class="btn-read">Read more</a>
-                                                        </div>
+                                                        <a href="importexport.html" class="btn-read">Read more</a>
+                                                        </div></a>
                                                     </div>
 
                                                     <div class="srv-card stagger-item" id="freight">
@@ -37,43 +39,127 @@ if (serviceGrid) {
                                                     </div>
 
                                                     <div class="srv-card stagger-item" id="haulage">
+                                                        <a href="haulage.html">
                                                         <div class="srv-img"><img src="img/trailertruck.jpeg"></div>
                                                         <div class="srv-body">
                                                         <h3>Haulage</h3>
                                                         <p>Our haulage services offer dependable road freight transport across Ghana and West Africa. We move your cargo safely from port to warehouse, factory, or final delivery point.</p>
-                                                        <a href="contact.html" class="btn-read">Read more</a>
+                                                        <a href="haulage.html" class="btn-read">Read more</a>
                                                         </div>
                                                     </div>
 
                                                     <div class="srv-card stagger-item" id="customs-brokerage">
+                                                        <a href="customsbrokerage.html">
                                                         <div class="srv-img"><img src="img/trailertruck.jpeg"></div>
                                                         <div class="srv-body">
                                                         <h3>Customs Brokerage</h3>
                                                         <p>As licensed Customs House Agents (CHA/839/BOND), we expertly navigate the complex customs clearance process. We handle documentation, duties, and compliance on your behalf.</p>
-                                                        <a href="contact.html" class="btn-read">Read more</a>
-                                                        </div>
+                                                        <a href="customsbrokerage.html" class="btn-read">Read more</a>
+                                                        </div></a>
                                                     </div>
 
                                                     <div class="srv-card stagger-item" id="export-docs">
+                                                        <a href="exportsdoc.html">
                                                         <div class="srv-img"><img src="img/trailertruck.jpeg"></div>
                                                         <div class="srv-body">
                                                         <h3>Export Documentation</h3>
                                                         <p>Proper export documentation is critical for smooth international trade. Our team prepares all necessary export documents, certificates of origin, and customs declarations accurately and on time.</p>
-                                                        <a href="contact.html" class="btn-read">Read more</a>
-                                                        </div>
+                                                        <a href="exportsdoc.html" class="btn-read">Read more</a>
+                                                        </div></a>
                                                     </div>
 
                                                     <div class="srv-card stagger-item" id="transport">
+                                                        <a href="transport.html">
                                                         <div class="srv-img"><img src="img/trailertruck.jpeg"></div>
                                                         <div class="srv-body">
                                                         <h3>Transport (Trailer Trucks)</h3>
                                                         <p>Our fleet of well-maintained trailer trucks provides reliable heavy-duty transport services. Whether bulk commodities or containerized cargo, we deliver anywhere across the region.</p>
-                                                        <a href="contact.html" class="btn-read">Read more</a>
-                                                        </div>
+                                                        <a href="transport.html" class="btn-read">Read more</a>
+                                                        </div></a>
                                                     </div>
 
                                                     </div>
                                                 </div>`
+}
+
+if (serviceRightSide){
+    serviceRightSide.innerHTML = `<section class="section-light">
+
+                  <div class="rightside-services-title">
+                    <h3 class="righthand-title fade-in-on-scroll">Other Services</h3>
+                    <p class="righthand-sub fade-in-on-scroll">Complete your logistics needs with our other services</p>
+                  </div> 
+
+                    <div class="related-services-grid">
+                      <a href="customsbrokerage.html" class="related-service-card stagger-item">
+                        <h3>Customs Brokerage</h3>
+                      </a>
+
+                      <a href="exportsdoc.html" class="related-service-card stagger-item">
+                        <h3>Export Documentation</h3>
+                      </a>
+
+                      <a href="importexport.html" class="related-service-card stagger-item">
+                        <h3>Import & Export</h3>
+                      </a>
+
+                      <a href="haulage.html" class="related-service-card stagger-item">
+                        <h3>Haulage</h3>
+                      </a>
+
+                      <a href="transport.html" class="related-service-card stagger-item">
+                        <h3>Transport (Trailer Trucks)</h3>
+                      </a>
+                    
+                      <a href="freightforwarding.html" class="related-service-card stagger-item">
+                        <h3>Freight Forwarding</h3>
+                      </a>
+                      
+                    </div>
+
+                  <section class="section-light">
+                      <h3 class="rightside-services-title fade-in-on-scroll">Why Choose Galore</h3>
+                      
+                      <div class="why-choose-grid">
+                        <div class="why-card stagger-item">
+                          <div class="why-icon">🌐</div> 
+                            <h3>Global Network</h3>
+                          <p>Access to trusted partners and shipping lines worldwide ensures your cargo can go anywhere.</p>
+                        </div>
+
+                        <div class="why-card stagger-item">
+                          <div class="why-icon">⚡</div>
+                          <h3>Fast Processing</h3>
+                          <p>Quick customs clearance and documentation means minimal delays and faster delivery times.</p>
+                        </div>
+
+                        <div class="why-card stagger-item">
+                          <div class="why-icon">💰</div>
+                          <h3>Competitive Rates</h3>
+                          <p>Volume discounts and optimized routing help you save on shipping costs without compromising quality.</p>
+                        </div>
+
+                        <div class="why-card stagger-item">
+                          <div class="why-icon">📊</div>
+                          <h3>Real-Time Tracking</h3>
+                          <p>Monitor your shipment every step of the way with our advanced tracking systems.</p>
+                        </div>
+
+                        <div class="why-card stagger-item">
+                          <div class="why-icon">✅</div>
+                          <h3>Expert Team</h3>
+                          <p>Experienced professionals who understand international trade regulations and best practices.</p>
+                        </div>
+
+                        <div class="why-card stagger-item">
+                          <div class="why-icon">🛡️</div>
+                          <h3>Cargo Safety</h3>
+                          <p>Proper handling, insurance, and security protocols protect your valuable shipments.</p>
+                        </div>
+                      </div>
+                    </section>
+                  </section>
+                </section>`
 }
 
 if (supportSystem) {
@@ -138,12 +224,12 @@ if (footerAll) {
                             <div class="footer-col">
                             <h4>OUR SERVICES</h4>
                             <ul>
-                                <li><a href="services.html" class="footer-link">Import and Export</a></li>
-                                <li><a href="services.html" class="footer-link">Freight Forwarding</a></li>
-                                <li><a href="services.html" class="footer-link">Haulage</a></li>
-                                <li><a href="services.html" class="footer-link">Customs Brokerage</a></li>
-                                <li><a href="services.html" class="footer-link">Export Documentations</a></li>
-                                <li><a href="services.html" class="footer-link">Transports (Trailer trucks)</a></li>
+                                <li><a href="importexport.html" class="footer-link">Import and Export</a></li>
+                                <li><a href="freightforwarding.html" class="footer-link">Freight Forwarding</a></li>
+                                <li><a href="haulage.html" class="footer-link">Haulage</a></li>
+                                <li><a href="customsbrokerage.html" class="footer-link">Customs Brokerage</a></li>
+                                <li><a href="exportdoc.html" class="footer-link">Export Documentations</a></li>
+                                <li><a href="transport.html" class="footer-link">Transports (Trailer trucks)</a></li>
                             </ul>
                             </div>
                             <div class="footer-col">
