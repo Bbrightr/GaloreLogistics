@@ -1354,7 +1354,8 @@ ER
     top: 70px;
     left: 0;
     right: 0;
-    background: #fff;
+    background: #1B3A5C ;
+    /* color: #142d47; */
     box-shadow: 0 8px 20px rgba(0,0,0,0.12);
     padding: 1rem 0;
     z-index: 999;
