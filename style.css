@@ -293,7 +293,13 @@ address { font-style: normal; }
   width: auto;
 }
 
-.hero-content { color: var(--white); text-align: left; position: relative; z-index: 1; }
+.hero-content { 
+  color: var(--white); 
+  text-align: left; 
+  position: relative; 
+  z-index: 1; 
+}
+
 /* .page-hero .hero-content { } */
 
 .hero-title {
@@ -1342,11 +1348,23 @@ ER
   .contact-info-card { max-width: 100%; }
   .cta-band { flex-direction: column; text-align: center; }
   .hero-title { font-size: 3.5rem; }
+
+  .hero-content {
+    padding: 0 1rem;
+  }
 }
 
 @media (max-width: 700px) {
-  .nav-links, .btn-quote { display: none; }
-  .hamburger { display: block; }
+  .nav-links, .btn-quote { 
+    display: none; 
+  }
+
+  .hamburger { 
+    display: block; 
+    margin-left: auto;
+    color: #fff;
+  }
+
   .nav-links.open {
     display: flex;
     flex-direction: column;
